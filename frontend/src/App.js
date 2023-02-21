@@ -17,8 +17,8 @@ function App() {
       <section class="text-gray-700 body-font border-t border-gray-200">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" key={index}>{p.id} {p.name} {p.age}</h1>
-            <p class="lg:w-1/2 w-full leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table.</p>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" key={index}>{p.name}</h1>
+            <p class="lg:w-1/2 w-full leading-relaxed text-base">ID is <b>{p.id}</b>Also Age is <b>{p.age}</b></p>
           </div>
           <div class="flex flex-wrap -m-4">
             <div class="xl:w-1/3 md:w-1/2 p-4">
