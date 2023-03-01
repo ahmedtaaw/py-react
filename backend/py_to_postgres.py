@@ -19,6 +19,8 @@ try:
         )
     cur = conn.cursor()
     
+    cur.execute('DROP TABLE IF EXISTS users')
+
     create_script = ''' CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
@@ -26,11 +28,13 @@ try:
         password VARCHAR(255) NOT NULL
     )
     '''
-
+    cur.execute(create_script)
     insert_script = '''INSERT INTO users (name, email, password) 
     VALUES (%s, %s, %s)'''
-    insert_value = ('ahmed','ahmed@gmail', '123456')
-    cur.execute(insert_script, insert_value)
+    insert_value = [('pablo','pablo@gmail', '123456'),('osman','osman@gmail', '123456'),('simo','simo@gmail', '123456')]
+    for record in insert_value:
+        cur.execute(insert_script, record)
+
     conn.commit()
 except Exception as error:
     print(error)
