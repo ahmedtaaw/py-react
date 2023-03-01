@@ -1,4 +1,6 @@
 import psycopg2
+import psycopg2.extras
+
 
 hostname = 'localhost'
 database = 'tdb'
@@ -17,7 +19,7 @@ try:
         password=pwd, 
         port=port_id
         )
-    cur = conn.cursor()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     
     cur.execute('DROP TABLE IF EXISTS users')
 
