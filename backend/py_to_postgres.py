@@ -36,12 +36,18 @@ try:
     VALUES (%s, %s, %s, %s)'''
     insert_value = [('pablo','pablo@gmail', '123456',1000),
                     ('osman','osman@gmail', '123456',2000),
-                    ('simo','simo@gmail', '123456',3000)]
+                    ('simo','simo@gmail', '123456',3000),
+                    ('ahmed','ahmed@gmail', '123456',3000)]
     for record in insert_value:
         cur.execute(insert_script, record)
 
     update_script = 'UPDATE USERS SET salary=salary+(salary*0.5)'
     cur.execute(update_script)
+
+    delete_script = 'DELETE FROM users WHERE name=%s'
+    delete_record = ('ahmed',)
+
+    cur.execute(delete_script, delete_record)
 
     cur.execute('SELECT * FROM users')
     for record in cur.fetchall():
