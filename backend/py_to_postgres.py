@@ -27,7 +27,10 @@ try:
     )
     '''
 
-    cur.execute(create_script)
+    insert_script = '''INSERT INTO users (name, email, password) 
+    VALUES (%s, %s, %s)'''
+    insert_value = ('ahmed','ahmed@gmail', '123456')
+    cur.execute(insert_script, insert_value)
     conn.commit()
 except Exception as error:
     print(error)
