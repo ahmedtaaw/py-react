@@ -41,7 +41,7 @@ try:
 
     cur.execute('SELECT * FROM users')
     for record in cur.fetchall():
-        print(record)
+        print(record['name'], record['email'], record['password'])
 
     conn.commit()
 except Exception as error:
