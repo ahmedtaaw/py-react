@@ -31,9 +31,15 @@ try:
     cur.execute(create_script)
     insert_script = '''INSERT INTO users (name, email, password) 
     VALUES (%s, %s, %s)'''
-    insert_value = [('pablo','pablo@gmail', '123456'),('osman','osman@gmail', '123456'),('simo','simo@gmail', '123456')]
+    insert_value = [('pablo','pablo@gmail', '123456'),
+                    ('osman','osman@gmail', '123456'),
+                    ('simo','simo@gmail', '123456')]
     for record in insert_value:
         cur.execute(insert_script, record)
+
+    cur.execute('SELECT * FROM users')
+    for record in cur.fetchall():
+        print(record)
 
     conn.commit()
 except Exception as error:
