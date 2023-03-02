@@ -3,7 +3,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from urllib.parse import quote 
 
-DATABASE_URL="postgresql://tuser:%s@localhost:5432/tdb"
+#DATABASE_URL="postgresql://tuser:%s@localhost:5432/tdb"
+DATABASE_URL="postgresql://tuser:%s@172.18.0.3:5431/tdb"
 DATABASE_PWD="11223344"
 
 
