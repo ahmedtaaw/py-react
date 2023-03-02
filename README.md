@@ -6,3 +6,11 @@ uvicorn main:app --reload
 
 
 frontend: npm start
+
+===
+systemctl status postgresql 
+
+
+===
+ahmedtaaw@gmail.com
+11223344

@@ -1,9 +1,11 @@
 from sqlalchemy import  Column, Integer, String
 from config import Base
 
-class Book(Base):
-    __tablename__ ="book"
+class Users(Base):
+    __tablename__ ="users"
 
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    description = Column(String)
+    name = Column(String)
+    email = Column(String)
+    password = Column(String)
+    salary = Column(Integer)
