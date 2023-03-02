@@ -9,8 +9,8 @@ from urllib.parse import quote
 db_name = 'tdb'
 db_user = 'tuser'
 db_pass = '11223344'
-db_host = '172.18.0.2'
-db_port = '5431'
+db_host = 'db'
+db_port = '5432'
 
 db_string = 'postgresql://{}:{}@{}:{}/{}'.format(db_user, db_pass, db_host, db_port, db_name)
 #engine=create_engine( DATABASE_URL % quote(DATABASE_PWD))
